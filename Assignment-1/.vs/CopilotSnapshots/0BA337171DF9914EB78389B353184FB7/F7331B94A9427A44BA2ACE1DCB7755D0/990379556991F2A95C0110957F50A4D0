@@ -20,10 +20,7 @@ internal class Program
         for (int  sum = 2;  sum <= 12;  sum++)
         {
             double pct = rolls == 0 ? 0 : (results[sum] / (double)rolls) * 100;
-            int asterisks = (int)pct;
-            Console.WriteLine($"{sum}: {new string('*', asterisks)}");
+            Console.WriteLine($"{sum}: {results[sum]} ({pct:F2}%)");
         }
-
-        Console.WriteLine("\r\nThank you for using the dice throwing simulator. Goodbye!");
     }
 }

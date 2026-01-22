@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GitHub\\IS-413\\Assignment-2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A4DDD2E5-9BF5-4908-905A-5B3D86E793E9}|Assignment-2\\Assignment-2.csproj|d:\\github\\is-413\\assignment-2\\assignment-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4DDD2E5-9BF5-4908-905A-5B3D86E793E9}|Assignment-2\\Assignment-2.csproj|solutionrelative:assignment-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4DDD2E5-9BF5-4908-905A-5B3D86E793E9}|Assignment-2\\Assignment-2.csproj|d:\\github\\is-413\\assignment-2\\assignment-2\\fooditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4DDD2E5-9BF5-4908-905A-5B3D86E793E9}|Assignment-2\\Assignment-2.csproj|solutionrelative:assignment-2\\fooditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FoodItem.cs",
+              "DocumentMoniker": "D:\\GitHub\\IS-413\\Assignment-2\\Assignment-2\\FoodItem.cs",
+              "RelativeDocumentMoniker": "Assignment-2\\FoodItem.cs",
+              "ToolTip": "D:\\GitHub\\IS-413\\Assignment-2\\Assignment-2\\FoodItem.cs",
+              "RelativeToolTip": "Assignment-2\\FoodItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:01:35.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GitHub\\IS-413\\Assignment-2\\Assignment-2\\Program.cs",
+              "RelativeDocumentMoniker": "Assignment-2\\Program.cs",
+              "ToolTip": "D:\\GitHub\\IS-413\\Assignment-2\\Assignment-2\\Program.cs",
+              "RelativeToolTip": "Assignment-2\\Program.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAgwHcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T01:43:41.782Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

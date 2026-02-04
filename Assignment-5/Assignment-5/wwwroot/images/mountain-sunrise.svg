@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Mountain sunrise">
+  <rect width="600" height="360" fill="#f2e9e4" />
+  <rect y="200" width="600" height="160" fill="#6d597a" />
+  <path d="M0 250l150-120 120 100 80-70 150 140" fill="#355070" />
+  <circle cx="440" cy="90" r="50" fill="#f4a261" />
+</svg>

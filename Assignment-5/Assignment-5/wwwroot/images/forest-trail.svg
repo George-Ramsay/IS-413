@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Forest trail">
+  <rect width="600" height="360" fill="#e9f5db" />
+  <rect y="230" width="600" height="130" fill="#4f772d" />
+  <path d="M280 360c20-90 40-140 60-200" stroke="#c9ada7" stroke-width="28" fill="none" stroke-linecap="round" />
+  <circle cx="140" cy="130" r="50" fill="#90a955" />
+  <circle cx="480" cy="110" r="60" fill="#90a955" />
+</svg>

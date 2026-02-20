@@ -1,0 +1,85 @@
+@page "{id:int}"
+@model Assignment_6.Pages.Movies.EditModel
+
+@{
+    ViewData["Title"] = "Edit Movie";
+}
+
+<h1>Edit Movie</h1>
+
+<form method="post" class="mt-4">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Movie.MovieId" />
+
+    <div class="mb-3">
+        <label asp-for="Movie.Title" class="form-label"></label>
+        <input asp-for="Movie.Title" class="form-control" />
+        <span asp-validation-for="Movie.Title" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Movie.CategoryId" class="form-label"></label>
+        <select asp-for="Movie.CategoryId" asp-items="Model.CategoryOptions" class="form-select">
+            <option value="">Select a category</option>
+        </select>
+        <span asp-validation-for="Movie.CategoryId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Movie.Year" class="form-label"></label>
+        <input asp-for="Movie.Year" class="form-control" type="number" min="1888" />
+        <span asp-validation-for="Movie.Year" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Movie.Director" class="form-label"></label>
+        <input asp-for="Movie.Director" class="form-control" />
+        <span asp-validation-for="Movie.Director" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Movie.Rating" class="form-label"></label>
+        <select asp-for="Movie.Rating" asp-items="Model.RatingOptions" class="form-select">
+            <option value="">Select a rating</option>
+        </select>
+        <span asp-validation-for="Movie.Rating" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Edited</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" asp-for="Movie.Edited" value="true" id="EditedYes" />
+            <label class="form-check-label" for="EditedYes">Yes</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" asp-for="Movie.Edited" value="false" id="EditedNo" />
+            <label class="form-check-label" for="EditedNo">No</label>
+        </div>
+        <span asp-validation-for="Movie.Edited" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Copied To Plex</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" asp-for="Movie.CopiedToPlex" value="true" id="CopiedToPlexYes" />
+            <label class="form-check-label" for="CopiedToPlexYes">Yes</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" asp-for="Movie.CopiedToPlex" value="false" id="CopiedToPlexNo" />
+            <label class="form-check-label" for="CopiedToPlexNo">No</label>
+        </div>
+        <span asp-validation-for="Movie.CopiedToPlex" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Movie.LentTo" class="form-label"></label>
+        <input asp-for="Movie.LentTo" class="form-control" />
+        <span asp-validation-for="Movie.LentTo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Movie.Notes" class="form-label"></label>
+        <input asp-for="Movie.Notes" class="form-control" maxlength="25" />
+        <span asp-validation-for="Movie.Notes" class="text-danger"></span>
+    </div>
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a class="btn btn-outline-secondary" asp-page="./Index">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

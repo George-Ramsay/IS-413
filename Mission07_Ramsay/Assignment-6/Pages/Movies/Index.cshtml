@@ -1,0 +1,49 @@
+@page
+@model Assignment_6.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "Movie Collection";
+}
+
+<h1>Movie Collection</h1>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Year</th>
+                <th>Director</th>
+                <th>Rating</th>
+                <th>Edited</th>
+                <th>Copied To Plex</th>
+                <th>Lent To</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var movie in Model.Movies)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td>@movie.Category?.CategoryName</td>
+                <td>@movie.Year</td>
+                <td>@movie.Director</td>
+                <td>@movie.Rating</td>
+                <td>@(movie.Edited == true ? "Yes" : "No")</td>
+                <td>@(movie.CopiedToPlex == true ? "Yes" : "No")</td>
+                <td>@movie.LentTo</td>
+                <td>@movie.Notes</td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-outline-primary" asp-page="./Edit" asp-route-id="@movie.MovieId">Edit</a>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@movie.MovieId" class="d-inline">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

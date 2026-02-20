@@ -1,0 +1,13 @@
+@page
+@model Assignment_6.Pages.AddMovieConfirmationModel
+
+@{
+    ViewData["Title"] = "Movie Added";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Movie Added</h1>
+    <p>Your movie has been added to the collection.</p>
+    <a class="btn btn-primary" asp-page="/AddMovie">Add Another Movie</a>
+    <a class="btn btn-outline-secondary" asp-page="/Movies/Index">View Collection</a>
+</div>

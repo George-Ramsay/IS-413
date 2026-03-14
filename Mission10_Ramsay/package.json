@@ -1,0 +1,10 @@
+{
+  "name": "mission10-ramsay",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix bowlingleague-client run dev",
+    "build": "npm --prefix bowlingleague-client run build",
+    "install:client": "npm --prefix bowlingleague-client install",
+    "api": "dotnet run --project BowlingLeague.API"
+  }
+}

@@ -52,6 +52,12 @@ The frontend is configured to proxy /api requests to http://localhost:5015.
 3. Open http://localhost:5173 in your browser.
 4. Use the list page to test paging, sorting, category filter, and cart actions.
 
+## Bootstrap Notes
+
+For Mission 12's Learning Suite comment, two Bootstrap features used in the app are:
+- `sticky-lg-top` on the cart summary card in `bookstore-ui/src/App.tsx`
+- `table-responsive` around the book list and cart tables in `bookstore-ui/src/App.tsx`
+
 ## Build checks
 
 Backend build:

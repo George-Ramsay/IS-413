@@ -271,26 +271,27 @@ function BookListPage() {
               <table className="table table-hover align-middle mb-0">
                 <thead className="table-light">
                   <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Publisher</th>
-                    <th>ISBN</th>
-                    <th>Category</th>
-                    <th className="text-end">Pages</th>
-                    <th className="text-end">Price</th>
-                    <th className="text-end">Action</th>
-                  </tr>
+                     <th>Title</th>
+                     <th>Author</th>
+                     <th>Publisher</th>
+                     <th>ISBN</th>
+                     <th>Classification</th>
+                     <th>Category</th>
+                     <th className="text-end">Pages</th>
+                     <th className="text-end">Price</th>
+                     <th className="text-end">Action</th>
+                   </tr>
                 </thead>
                 <tbody>
                   {isLoadingBooks ? (
                     <tr>
-                      <td className="text-center py-4" colSpan={8}>
+                      <td className="text-center py-4" colSpan={9}>
                         Loading books...
                       </td>
                     </tr>
                   ) : books.length === 0 ? (
                     <tr>
-                      <td className="text-center py-4" colSpan={8}>
+                      <td className="text-center py-4" colSpan={9}>
                         No books match the selected filters.
                       </td>
                     </tr>
@@ -301,6 +302,7 @@ function BookListPage() {
                         <td>{book.author}</td>
                         <td>{book.publisher}</td>
                         <td>{book.isbn}</td>
+                        <td>{book.classification}</td>
                         <td>{book.category}</td>
                         <td className="text-end">{book.pageCount}</td>
                         <td className="text-end">{currency(book.price)}</td>

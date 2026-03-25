@@ -32,6 +32,7 @@ public class CartController(BookstoreContext context) : ControllerBase
         var cartItems = GetCartItems();
         var existingItem = cartItems.FirstOrDefault(i => i.BookId == request.BookId);
 
+        // Adding the same title again increases quantity instead of duplicating rows in the cart.
         if (existingItem is null)
         {
             cartItems.Add(new CartItem
@@ -100,6 +101,7 @@ public class CartController(BookstoreContext context) : ControllerBase
 
     private List<CartItem> GetCartItems()
     {
+        // Session stores strings, so cart contents are serialized/deserialized through the helper methods.
         return HttpContext.Session.GetObject<List<CartItem>>(CartSessionKey) ?? [];
     }
 
@@ -110,6 +112,7 @@ public class CartController(BookstoreContext context) : ControllerBase
 
     private static CartSummaryDto BuildSummary(IReadOnlyList<CartItem> items)
     {
+        // The UI reads precomputed subtotals and totals directly from this DTO.
         return new CartSummaryDto
         {
             Items = items

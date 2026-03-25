@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 var configuredConnectionString = builder.Configuration.GetConnectionString("BookstoreConnection");
 var databasePath = Path.Combine(builder.Environment.ContentRootPath, "Data", "Bookstore.sqlite");
 
+// Fail fast with a clear message if the course database has not been copied into the project.
 if (!File.Exists(databasePath) || new FileInfo(databasePath).Length == 0)
 {
     throw new InvalidOperationException(
@@ -27,6 +28,7 @@ builder.Services.AddDbContext<BookstoreContext>(options =>
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
+    // The cart lives in session, so the cookie needs to persist while the user browses.
     options.Cookie.Name = ".Bookstore.Session";
     options.IdleTimeout = TimeSpan.FromHours(2);
     options.Cookie.HttpOnly = true;

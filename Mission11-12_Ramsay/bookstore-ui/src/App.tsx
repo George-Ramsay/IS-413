@@ -87,6 +87,7 @@ function BookListPage() {
   const [error, setError] = useState('')
   const [activeAddBookId, setActiveAddBookId] = useState<number | null>(null)
 
+  // Keep filters and paging in the URL so refresh/back/continue-shopping restore the same view.
   function updateSearch(next: {
     page?: number
     pageSize?: number
@@ -144,6 +145,7 @@ function BookListPage() {
         setTotalCount(response.data.totalCount)
         setTotalPages(response.data.totalPages)
 
+        // If the backend clamps an invalid page number, sync the URL back to the corrected page.
         if (response.data.currentPage !== page) {
           updateSearch({ page: response.data.currentPage })
         }
@@ -185,6 +187,7 @@ function BookListPage() {
         quantity: 1,
       })
 
+      // Preserve the current page/filter state so Continue Shopping can return here later.
       const returnTo = encodeURIComponent(`${location.pathname}${location.search}`)
       navigate(`/cart?returnTo=${returnTo}`)
     } catch {
@@ -403,6 +406,7 @@ function BookListPage() {
 function CartPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
+  // Default to the catalog if the user opens /cart directly without a saved return path.
   const returnTo = searchParams.get('returnTo') || '/'
 
   const [cartSummary, setCartSummary] = useState<CartSummary | null>(null)
@@ -415,6 +419,7 @@ function CartPage() {
     try {
       const response = await axios.get<CartSummary>('/api/cart')
       setCartSummary(response.data)
+      // Mirror server quantities locally so the user can edit a value before clicking Update.
       setQuantityDrafts(
         Object.fromEntries(response.data.items.map((i) => [i.bookId, i.quantity])),
       )

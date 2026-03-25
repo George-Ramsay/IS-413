@@ -21,6 +21,7 @@ public class BooksController(BookstoreContext context) : ControllerBase
             booksQuery = booksQuery.Where(b => b.Category == queryParams.Category);
         }
 
+        // Support assignment sorting options while keeping results stable for duplicate values.
         var sortBy = queryParams.SortBy.ToLowerInvariant();
         var descending = queryParams.SortDir.Equals("desc", StringComparison.OrdinalIgnoreCase);
 
@@ -39,6 +40,7 @@ public class BooksController(BookstoreContext context) : ControllerBase
 
         var totalCount = await booksQuery.CountAsync();
         var totalPages = totalCount == 0 ? 1 : (int)Math.Ceiling(totalCount / (double)queryParams.PageSize);
+        // Clamp the page so the API still returns a valid slice if the UI requests an out-of-range page.
         var currentPage = Math.Clamp(queryParams.Page, 1, totalPages);
 
         var items = await booksQuery

@@ -1,0 +1,12 @@
+.cart-summary-card {
+  top: 1rem;
+}
+
+.table th {
+  white-space: nowrap;
+}
+
+.cart-qty-cell input {
+  width: 84px;
+  margin-left: auto;
+}

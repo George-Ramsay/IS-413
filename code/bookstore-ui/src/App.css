@@ -10,3 +10,7 @@
   width: 84px;
   margin-left: auto;
 }
+
+.admin-books-table td:last-child {
+  min-width: 140px;
+}

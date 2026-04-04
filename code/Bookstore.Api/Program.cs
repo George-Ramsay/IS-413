@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var configuredConnectionString = builder.Configuration.GetConnectionString("BookstoreConnection");
 var databasePath = Path.Combine(builder.Environment.ContentRootPath, "Data", "Bookstore.sqlite");
+var configuredFrontendOrigin = builder.Configuration["FrontendOrigin"];
 
 if (!File.Exists(databasePath) || new FileInfo(databasePath).Length == 0)
 {
@@ -37,7 +38,13 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        var allowedOrigins = new[] { "http://localhost:5173", configuredFrontendOrigin }
+            .OfType<string>()
+            .Where(origin => !string.IsNullOrWhiteSpace(origin))
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        policy.WithOrigins(allowedOrigins)
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
